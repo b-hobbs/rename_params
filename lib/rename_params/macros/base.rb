@@ -17,7 +17,9 @@ module RenameParams
         def filter_options(args = {})
           {
             only: args.delete(:only),
-            except: args.delete(:except)
+            except: args.delete(:except),
+            if: args.delete(:if),
+            unless: args.delete(:unless)
           }.reject { |_, v| v.nil? }
         end
       end
