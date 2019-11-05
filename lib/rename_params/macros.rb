@@ -10,6 +10,10 @@ module RenameParams
       def move(*args)
         RenameParams::Macros::Move.def_move(self, *args)
       end
+
+      def copy(*args)
+        RenameParams::Macros::Copy.def_copy(self, *args)
+      end
     end
   end
 end

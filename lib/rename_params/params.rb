@@ -26,6 +26,10 @@ module RenameParams
       set(key, delete(key, namespace), target) if has_key?(key, namespace)
     end
 
+    def copy(key, target = [], namespace = [])
+      set(key, get(key, namespace), target) if has_key?(key, namespace)
+    end
+
     private
 
     def set(key, value, namespace = [])

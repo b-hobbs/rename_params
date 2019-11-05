@@ -1,8 +1,11 @@
 ENV['RAILS_ENV'] = 'test'
 ENV['DATABASE_URL'] = 'sqlite3://localhost/tmp/rename_params_test'
 
+# require File.expand_path("../../config/environment", __FILE__)
+
 require 'bundler/setup'
 require 'rails'
+
 if Rails.version.start_with?('4.0')
   require 'support/apps/rails4_0'
 elsif Rails.version.start_with?('4.1')
@@ -13,6 +16,8 @@ elsif Rails.version.start_with?('5.0')
   require 'support/apps/rails5_0'
 elsif Rails.version.start_with?('5.1')
   require 'support/apps/rails5_1'
+elsif Rails.version.start_with?('5.2')
+  require 'support/apps/rails5_2'
 end
 require 'rename_params'
 
